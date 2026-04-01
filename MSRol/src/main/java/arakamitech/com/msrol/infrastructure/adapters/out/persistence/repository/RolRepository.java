@@ -1,4 +1,4 @@
-package arakamitech.com.msrol.infrastructure.adapters.out.persistence.entity.repository;
+package arakamitech.com.msrol.infrastructure.adapters.out.persistence.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

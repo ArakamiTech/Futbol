@@ -1,12 +1,12 @@
 package arakamitech.com.msrol.application.dto.response;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class RolResponse {
 	
 	private Long id;

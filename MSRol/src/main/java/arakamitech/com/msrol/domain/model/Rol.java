@@ -1,9 +1,11 @@
 package arakamitech.com.msrol.domain.model;
 
+import java.io.Serializable;
+
 import arakamitech.com.msrol.shared.exception.DomainError;
 import arakamitech.com.msrol.shared.exception.DomainException;
 
-public class Rol {
+public class Rol implements Serializable {
 
     private Long id;
     private String nombre;
@@ -12,6 +14,9 @@ public class Rol {
         validarNombre(nombre);
         this.id = id;
         this.nombre = nombre;
+    }
+
+    protected Rol() {
     }
 
     public Rol(String nombre) {

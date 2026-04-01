@@ -86,7 +86,7 @@ arakamitech.com.msrol
 │   │               └── RolRepositoryAdapter.java
 │   │
 │   └── config
-│       └── BeanConfiguration.java
+│       └── RedisConfig.java
 │
 └── shared
     ├── exception

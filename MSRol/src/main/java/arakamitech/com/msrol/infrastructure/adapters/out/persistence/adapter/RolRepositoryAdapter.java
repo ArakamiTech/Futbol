@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import arakamitech.com.msrol.domain.model.Rol;
 import arakamitech.com.msrol.domain.port.out.RolRepositoryPort;
 import arakamitech.com.msrol.infrastructure.adapters.out.persistence.entity.RolEntity;
-import arakamitech.com.msrol.infrastructure.adapters.out.persistence.entity.repository.RolRepository;
 import arakamitech.com.msrol.infrastructure.adapters.out.persistence.mapper.RolPersistenceMapper;
+import arakamitech.com.msrol.infrastructure.adapters.out.persistence.repository.RolRepository;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
