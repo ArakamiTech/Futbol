@@ -3,7 +3,7 @@ package arakamitech.com.msnotificaciones.application.usecase;
 import org.springframework.stereotype.Service;
 
 import arakamitech.com.msnotificaciones.domain.port.in.NotificationUsecase;
-import arakamitech.com.msnotificaciones.domain.port.out.EmailSender;
+import arakamitech.com.msnotificaciones.domain.port.out.EmailSenderPort;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @RequiredArgsConstructor
 public class NotificationUseCaseImpl implements NotificationUsecase {
 
-    private final EmailSender emailSender;
+    private final EmailSenderPort emailSender;
 
     @Override
     public void notificarEmail(String email, String message) {

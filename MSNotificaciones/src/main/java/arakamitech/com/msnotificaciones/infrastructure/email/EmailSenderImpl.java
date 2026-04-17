@@ -4,7 +4,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
-import arakamitech.com.msnotificaciones.domain.port.out.EmailSender;
+import arakamitech.com.msnotificaciones.domain.port.out.EmailSenderPort;
 import jakarta.mail.internet.MimeMessage;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-public class EmailSenderImpl implements EmailSender {
+public class EmailSenderImpl implements EmailSenderPort {
 
 	private final JavaMailSender mailSender;
 

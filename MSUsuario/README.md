@@ -10,6 +10,7 @@
 ## 🧠 Descripción
 
 Microservicio encargado de la gestión de **Usuarios** dentro del ecosistema.
+Implementa Redis, Kafka y CompletableFuture
 
 Implementado bajo **Arquitectura Hexagonal (Ports & Adapters)** para garantizar:
 
@@ -35,10 +36,12 @@ o desde tu IDE como **Spring Boot App**
 ## 🧱 Arquitectura Hexagonal
 
 ```text
-arakamitech.com.msplantilla
+arakamitech.com.msusuario
 │
 ├── domain
 │   ├── model
+│   │   └── AllTables.java
+│   │   └── Rol.java
 │   │   └── Usuario.java
 │   │
 │   ├── port
@@ -46,10 +49,12 @@ arakamitech.com.msplantilla
 │   │   │   └── UsuarioUseCase.java
 │   │   │
 │   │   └── out
+│   │       └── NotificacionProducerPort.java
+│   │       └── RolRepositoryPort.java
 │   │       └── UsuarioRepositoryPort.java
 │   │
 │   └── service
-│       └── UsuarioDomainService.java
+│       └── FindAllTables.java
 │
 ├── application
 │   ├── usecase
@@ -60,9 +65,13 @@ arakamitech.com.msplantilla
 │   │   │   └── UsuarioRequest.java
 │   │   │
 │   │   └── response
+│   │       └── AllTablesResponse.java
+│   │       └── Response.java
+│   │       └── RolResponse.java
 │   │       └── UsuarioResponse.java
 │   │
 │   └── mapper
+│       └── AllTablesMapper.java
 │       └── UsuarioMapper.java
 │
 ├── infrastructure
@@ -74,18 +83,32 @@ arakamitech.com.msplantilla
 │   │   │
 │   │   └── out
 │   │       └── persistence
-│   │           ├── entity
-│   │           │   └── UsuarioEntity.java
-│   │           │
-│   │           ├── repository
-│   │           │   └── UsuarioJpaRepository.java
-│	│			├── mapper
-│   │           │   └── UsuarioPersistenceMapper.java
-│   │           │
-│   │           └── adapter
-│   │               └── UsuarioRepositoryAdapter.java
+│   │       │   ├── entity
+│   │       │   │   └── UsuarioEntity.java
+│   │       │   │
+│   │       │   ├── repository
+│   │       │   │   └── UsuarioRepository.java
+│	│		│	├── mapper
+│   │       │   │   └── UsuarioPersistenceMapper.java
+│   │       │   │
+│   │       │   └── adapter
+│   │       │       └── UsuarioRepositoryAdapter.java
+│   │   	└── rol
+│	│           └── persistence
+│	│               ├── entity
+│	│               │   └── RolEntity.java
+│	│               │
+│	│               ├── repository
+│	│               │   └── RolRepository.java
+│	│				├── mapper
+│	│               │   └── RolPersistenceMapper.java
+│	│               │
+│	│               └── adapter
+│	│                   └── RolRepositoryAdapter.java
 │   │
 │   └── config
+│       └── AsyncConfig.java
+│       └── NotificacionProperties.java
 │       └── RedisConfig.java
 │
 └── shared
